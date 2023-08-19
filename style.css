@@ -47,7 +47,12 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid red; */
+}
+
+.row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero {
@@ -74,11 +79,17 @@ img {
 
 /* NAVIGATION  */
 
-.nav {
+header {
     margin: 40px auto 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+.nav {
+    width: 60%;
+}
+
+.nav-toggle {
+    display: none;
+    color: #FFFFFF;
 }
 
 .nav--list {
@@ -87,18 +98,7 @@ img {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
 }
-
-.logo {
-    font-size: 0.875rem;
-    font-family: 'Crimson Pro', serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    border: 2px solid #FFFFFF;
-    padding: 0.6em 1em;
-} 
 
 .nav--link {
     font-weight: 500;
@@ -127,6 +127,18 @@ img {
 .nav--link:focus{
     font-weight: 700;
 }
+
+.logo {
+    width: 120px;
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: 'Crimson Pro', serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    padding: 0.6em 0.8em;
+} 
 
 .first{
     width: 50%;
@@ -187,6 +199,64 @@ img {
 
 @media (max-width: 475px){
 
+    header {
+        margin-bottom: 60px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 50px;
+    }
+
+    .nav {
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+    }
+
+    .nav-toggle {
+        background-color: #181719;
+        color: white;
+        text-decoration: none;
+        border: none;
+    }
+
+    .nav--visible {
+        visibility: visible;
+        position: relative;
+        height: 100vh;
+    }
+
+    .nav--list{
+        flex-direction: column;
+        height: 30vh;
+        text-align: center;
+        justify-content: space-evenly;
+
+    }
+
+    .row-flex--new {
+        font-size: 1.125rem;
+        flex-direction: column;
+        width: 100%;
+        gap: 8rem;
+    }
+
+
+    .logo--invisible {
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+    }
+
+    .move-right {
+        text-align: right;
+        width: 90%;
+    }
+    
     body {
         font-size: 0.875rem;
     }
@@ -217,11 +287,6 @@ img {
         font-size: 0.75rem;
     }
 
-    
-
-    .nav {
-        display: none;
-    }
     .row {
         display: block;
     }
